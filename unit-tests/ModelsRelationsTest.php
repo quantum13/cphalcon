@@ -110,7 +110,7 @@ class ModelsRelationsTest extends PHPUnit_Framework_TestCase
 		$di->set('db', function(){
 			require 'unit-tests/config.db.php';
 			return new Phalcon\Db\Adapter\Pdo\Sqlite($configSqlite);
-		}, true);
+		}, false);
 
 		$this->_executeTestsNormal($di);
 		$this->_executeTestsRenamed($di);

@@ -18,7 +18,7 @@ if (!file_exists(__DIR__ . '/config.db.local.php')) {
 
 	$configSqlite = array(
 		'dbname' => '/tmp/phalcon_test.sqlite',
-        'persistent' => true
+        //'persistent' => true
 	);
 }
 else {

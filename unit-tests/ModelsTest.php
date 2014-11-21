@@ -72,7 +72,7 @@ class ModelsTest extends PHPUnit_Framework_TestCase
 			return new Phalcon\Mvc\Model\Metadata\Memory();
 		});
 
-		$di->set('db', $dbService, true);
+		$di->set('db', $dbService, false);
 
 		return $di;
 	}
@@ -145,6 +145,9 @@ class ModelsTest extends PHPUnit_Framework_TestCase
 		$this->_executeTestsRenamed($di);
 
 		$this->issue886($di);
+
+        $di->set('db', null);
+        $di = null;
 	}
 
 	protected function issue1534($di)
